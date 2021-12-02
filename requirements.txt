@@ -1,0 +1,11 @@
+Flask
+numpy
+scipy>=0.15.1
+scikit-learn
+matplotlib
+pandas
+lifelines
+flasgger
+
+
+
