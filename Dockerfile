@@ -1,18 +1,8 @@
-FROM python:3.7
-
-RUN pip install virtualenv
-ENV VIRTUAL_ENV=/venv
-RUN virtualenv venv -p python3
-ENV PATH="VIRTUAL_ENV/bin:$PATH"
-
+FROM python:3.6-jessie
+RUN apt update
 WORKDIR /app
+ADD requirements.txt /app/requirements.txt
+RUN pip install -r /app/requirements.txt
 ADD . /app
-
-# Install dependencies
-RUN pip install -r requirements.txt
-
-# Expose port 
 ENV PORT 8080
-
-# Run the application:
-CMD ["gunicorn", "app:app", "--config=flask_api.py"]
+CMD ["gunicorn", "app:app", "--config=config.py"]
