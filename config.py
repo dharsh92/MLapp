@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Dec  4 18:22:08 2021
-
-@author: dhamlk
-"""
-
 from os import environ as env
 import multiprocessing
 
